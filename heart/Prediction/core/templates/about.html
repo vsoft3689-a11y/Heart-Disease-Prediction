@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="about-background">
+  <div class="about-overlay">
+    <div class="container about-section">
+
+      <!-- 🩺 Main Heading -->
+      <h2> About the Heart Health Prediction System</h2>
+      <p>
+        This AI-powered web application combines <b>Machine Learning</b> and <b>Medical Science</b>
+        to predict the likelihood of heart disease based on real patient health data.
+        It helps identify potential risks early and supports preventive care decisions.
+      </p>
+
+      <hr>
+
+      <!-- 🧠 Model Overview -->
+      <h3> How the Machine Learning Model Was Trained</h3>
+      <p>
+        The Heart Disease Prediction Model was developed using a structured <b>medical dataset</b>
+        containing key health indicators like <b>age</b>, <b>blood pressure</b>,
+        <b>cholesterol</b>, and <b>ECG results</b>.
+        The model was trained to classify patients as <b>High Risk</b> or <b>Low Risk</b> for heart disease.
+      </p>
+
+      <ul class="ml-steps">
+        <li>📥 <b>Data Loading & Cleaning:</b> Imported <code>heart.csv</code>, checked for missing values, and standardized column data.</li>
+        <li>🔬 <b>Exploratory Data Analysis:</b> Examined patterns and relationships between health parameters and outcomes.</li>
+        <li>⚙️ <b>Feature Scaling:</b> Used <code>StandardScaler</code> to normalize data for better model balance.</li>
+        <li>🧠 <b>Model Training:</b> Implemented two algorithms — <b>Logistic Regression</b> and <b>Random Forest Classifier</b>.</li>
+        <li>📈 <b>Evaluation:</b> Measured accuracy, precision, recall, and F1-score using test datasets.</li>
+        <li>💾 <b>Deployment:</b> Integrated the trained model into Django for real-time predictions.</li>
+      </ul>
+
+      <hr>
+
+      <!-- ⚙️ Algorithms Used -->
+      <h3>🪄 Algorithms Used</h3>
+      <div class="algo-box">
+        <p><b>1️⃣ Logistic Regression:</b> Calculates the probability of heart disease using mathematical modeling.</p>
+        <p><b>2️⃣ Random Forest Classifier:</b> A robust ensemble model combining multiple decision trees
+        for higher stability and accuracy in predictions.</p>
+      </div>
+
+      <hr>
+
+      <!-- 🎯 Model Accuracy -->
+      <h3>🎯 Model Accuracy</h3>
+      <p>
+        The final deployed model — <b>Random Forest Classifier</b> — achieved an outstanding accuracy of:
+      </p>
+      <p style="text-align:center; color:#00f5d4; font-weight:bold; font-size:1.4rem; text-shadow:0 0 10px rgba(0,255,255,0.5);">
+        🚀 98.5% Accuracy
+      </p>
+
+      <hr>
+
+      <!-- 🧰 Tools & Libraries -->
+      <h3>🧩 Tools & Libraries Used</h3>
+      <ul class="ml-steps">
+        <li>🐍 <b>Python 3</b> — Core programming language</li>
+        <li>📊 <b>Pandas</b> — Data loading and preprocessing</li>
+        <li>🔢 <b>NumPy</b> — Numerical operations and data manipulation</li>
+        <li>📈 <b>Matplotlib / Seaborn</b> — Visualization of trends and health data</li>
+        <li>🧠 <b>Scikit-Learn</b> — Model training, evaluation, and accuracy measurement</li>
+        <li>💾 <b>Joblib</b> — Model saving for Django integration</li>
+      </ul>
+
+      <hr>
+
+      <!-- 🌍 Summary -->
+      <p class="final-line">
+         This project demonstrates how <b>Artificial Intelligence</b> and <b>Machine Learning</b>
+        can assist medical professionals by predicting heart disease risk with high accuracy —
+        enabling smarter, data-driven healthcare decisions.
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

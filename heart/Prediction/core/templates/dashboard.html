@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <h2>🫀 My Heart Health Dashboard</h2>
+  <p>Welcome, <strong>{{ user.username }}</strong>! Here are your previous predictions:</p>
+
+  {% if predictions %}
+    <table border="1" cellspacing="0" cellpadding="10" style="width:100%; border-radius:10px; border-collapse:collapse;">
+      <tr style="background-color:#2980b9; color:white;">
+        <th>Date</th>
+        <th>Age</th>
+        <th>Chol</th>
+        <th>BP</th>
+        <th>Result</th>
+        <th>Probability</th>
+      </tr>
+      {% for p in predictions %}
+      <tr style="text-align:center;
+          {% if p.result == 'High Risk' %}
+              background-color:#f8d7da;  /* Light red for High Risk */
+          {% else %}
+              background-color:#d4edda;  /* Light green for Low Risk */
+          {% endif %}
+      ">
+        <td>{{ p.created_at|date:"Y-m-d H:i" }}</td>
+        <td>{{ p.age }}</td>
+        <td>{{ p.chol }}</td>
+        <td>{{ p.trestbps }}</td>
+        <td style="font-weight:bold;">
+          {% if p.result == 'High Risk' %}
+            ⚠️ <span style="color:#c0392b;">High Risk</span>
+          {% else %}
+            ✅ <span style="color:#27ae60;">Low Risk</span>
+          {% endif %}
+        </td>
+        <td>{{ p.probability|floatformat:2 }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <!-- Chart Section -->
+    <canvas id="riskChart" width="400" height="200" style="margin-top:30px;"></canvas>
+  {% else %}
+    <p>You haven’t made any predictions yet.</p>
+    <a href="{% url 'predict' %}"><button>🧮 Make a Prediction</button></a>
+  {% endif %}
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const labels = [
+    {% for p in predictions %}"{{ p.created_at|date:'Y-m-d H:i' }}",{% endfor %}
+  ];
+  const data = {
+    labels: labels.reverse(),
+    datasets: [{
+      label: 'Heart Disease Probability',
+      data: [{% for p in predictions %}{{ p.probability|floatformat:2 }},{% endfor %}],
+      borderColor: '#e74c3c',
+      backgroundColor: 'rgba(231, 76, 60, 0.3)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 4,
+      pointBackgroundColor: '#e74c3c'
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true, position: 'bottom' }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 1,
+          title: { display: true, text: 'Probability' }
+        },
+        x: {
+          title: { display: true, text: 'Prediction Time' }
+        }
+      }
+    }
+  };
+
+  new Chart(document.getElementById('riskChart'), config);
+</script>
+
+{% endblock %}

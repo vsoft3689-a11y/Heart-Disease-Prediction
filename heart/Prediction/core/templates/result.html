@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="result-card">
+  <h2 class="result-title">🩺 Prediction Result</h2>
+  <hr>
+
+  {% if prediction.result == 'High Risk' %}
+  <p class="risk-high">⚠️ High Risk of Heart Disease</p>
+  {% else %}
+  <p class="risk-low">✅ Low Risk of Heart Disease</p>
+  {% endif %}
+
+  <p class="probability">
+    Prediction Probability: <span>{{ prediction.probability|floatformat:2 }}</span>
+  </p>
+
+  <hr>
+  <h3 class="input-title">Your Input Data</h3>
+  <ul class="input-data">
+    <li>👤 <strong>Age:</strong> {{ prediction.age }}</li>
+    <li>💉 <strong>Cholesterol:</strong> {{ prediction.chol }}</li>
+    <li>❤️ <strong>BP:</strong> {{ prediction.trestbps }}</li>
+    <li>🏃 <strong>Max Heart Rate:</strong> {{ prediction.thalach }}</li>
+  </ul>
+
+  <div class="result-buttons">
+    <a href="{% url 'predict' %}" class="btn-glow">🔁 Predict Again</a>
+    <a href="{% url 'dashboard' %}" class="btn-glow-secondary">📊 View Dashboard</a>
+  </div>
+</div>
+
+{% endblock %}

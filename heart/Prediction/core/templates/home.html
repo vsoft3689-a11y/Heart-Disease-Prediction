@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h2>Welcome to the Heart Health Prediction System 🫀</h2>
+  <p>
+    This web application helps you check your risk of heart disease using a
+    Machine Learning model trained on medical data.
+  </p>
+
+  {% if user.is_authenticated %}
+    <p>Hello, <strong>{{ user.username }}</strong>! You can start your prediction now:</p>
+    <a href="{% url 'predict' %}">
+      <button> Go to Prediction Form</button>
+    </a>
+  {% else %}
+    <p>Please log in or register to use the prediction system.</p>
+    <a href="{% url 'login' %}"><button>Login</button></a>
+    <a href="{% url 'register' %}"><button>Register</button></a>
+  {% endif %}
+</div>
+{% endblock %}

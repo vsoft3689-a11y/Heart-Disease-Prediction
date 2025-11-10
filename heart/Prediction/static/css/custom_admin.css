@@ -1,0 +1,270 @@
+/* 🌈 Heart Health AI Custom Admin Theme (No Logos) */
+
+/* ------------------ Global Background ------------------ */
+body {
+  background: linear-gradient(135deg, #e3f2fd, #90caf9) !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* ------------------ Header (Top Navbar) ------------------ */
+.navbar.navbar-dark {
+  background: linear-gradient(90deg, #0077b6, #00b4d8) !important;
+  height: 65px !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .navbar-brand {
+  font-size: 20px !important;
+  font-weight: 600;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ------------------ Sidebar ------------------ */
+.main-sidebar {
+  background: linear-gradient(180deg, #023e8a, #0077b6) !important;
+  box-shadow: inset -2px 0 5px rgba(0,0,0,0.2);
+}
+
+/* ------------------ Username Panel ------------------ */
+.user-panel {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 10px;
+  padding: 8px;
+}
+
+.user-panel .info p {
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* ------------------ Dashboard Cards ------------------ */
+.card, .module {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
+
+/* ------------------ Buttons ------------------ */
+.btn-primary {
+  background-color: #0077b6 !important;
+  border-color: #0077b6 !important;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #00b4d8 !important;
+  border-color: #00b4d8 !important;
+}
+
+/* ------------------ Headings ------------------ */
+h1, h2, h3, h4 {
+  font-weight: 600 !important;
+  color: #023e8a !important;
+}
+
+/* ------------------ Tables ------------------ */
+.table th {
+  background-color: #0077b6 !important;
+  color: #ffffff !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #e8f6ff !important;
+}
+
+/* ------------------ Sidebar Brand (Top Text Area) ------------------ */
+.brand-link {
+  justify-content: center !important;
+  text-align: center !important;
+  height: 70px !important;
+  background: linear-gradient(90deg, #0077b6, #00b4d8) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Remove logo and fallback text */
+.brand-link img,
+.brand-link .brand-text,
+.brand-link span {
+  display: none !important;
+}
+
+/* Add stylish brand text instead */
+.brand-link::after {
+  content: "❤️ Heart Health Dashboard";
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
+}
+
+/* ------------------ Sidebar Hover Effects ------------------ */
+.nav-sidebar .nav-link:hover {
+  background: rgba(0, 180, 216, 0.2);
+  border-radius: 8px;
+}
+
+/* ------------------ Optional: Glow Animation on Header ------------------ */
+@keyframes softGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #00b4d8, 0 0 10px #0077b6;
+  }
+  50% {
+    text-shadow: 0 0 15px #00b4d8, 0 0 20px #0096c7;
+  }
+}
+
+.navbar .navbar-brand {
+  animation: softGlow 3s ease-in-out infinite;
+}
+
+/* ------------------ Footer ------------------ */
+.main-footer {
+  background: rgba(0, 180, 216, 0.1);
+  color: #0077b6;
+  text-align: center;
+  border-top: 1px solid rgba(0, 180, 216, 0.3);
+  font-weight: 500;
+}
+/* 🧩 Fix word wrapping in Recent Actions */
+ul.actionlist li {
+  word-break: normal !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  line-height: 1.4 !important;
+}
+
+ul.actionlist li a {
+  display: inline-block !important;
+  color: #0077b6 !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+ul.actionlist li a:hover {
+  color: #0096c7 !important;
+  text-decoration: underline;
+}
+/* ====== Improved Table Styling for Better Readability ====== */
+
+/* Table Headers */
+.table th {
+  background-color: #0077b6 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #00b4d8 !important;
+}
+
+/* Table Row Text */
+.table td {
+  color: #023e8a !important;
+  font-weight: 500;
+  background-color: #ffffff !important;
+}
+
+/* Alternate row background for visibility */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f1faff !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #ffffff !important;
+}
+
+/* Fix selected (checked) row color */
+.table tr.selected td {
+  background-color: #caf0f8 !important;
+  color: #03045e !important;
+}
+
+/* Fix hover effect */
+.table tbody tr:hover td {
+  background-color: #e3f2fd !important;
+  color: #03045e !important;
+  cursor: pointer;
+}
+
+/* Staff Status Icons (green/red) look better */
+.icon-yes {
+  color: #06d6a0 !important;
+}
+
+.icon-no {
+  color: #ef476f !important;
+}
+.table td, .table th {
+  border-color: rgba(0, 119, 182, 0.2) !important;
+}
+/* 🌈 FIX: Make admin table text readable (override Jazzmin theme) */
+#result_list th,
+#result_list td {
+  color: #022f4f !important;
+  background-color: #ffffff !important;
+}
+
+/* Table header (Username, Email, etc.) */
+#result_list thead th {
+  background-color: #0077b6 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 2px solid #00b4d8 !important;
+}
+
+/* Hover row effect */
+#result_list tbody tr:hover td {
+  background-color: #e3f2fd !important;
+  color: #03045e !important;
+}
+
+/* Alternate row color (striped look) */
+#result_list tbody tr:nth-child(odd) td {
+  background-color: #f9fcff !important;
+}
+
+#result_list tbody tr:nth-child(even) td {
+  background-color: #ffffff !important;
+}
+
+/* Selected checkbox row highlight */
+#result_list tr.selected td {
+  background-color: #caf0f8 !important;
+  color: #03045e !important;
+}
+
+/* Fix staff status icons */
+#result_list .icon-yes {
+  color: #06d6a0 !important;
+}
+
+#result_list .icon-no {
+  color: #ef476f !important;
+}
+/* 🌈 FINAL FIX — Table Readability and Design Polishing */
+
+/* Table header */
+#result_list thead th {
+  background-color: #0077b6 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #00b4d8 !important;
+}
+
+/* Table rows - soft colors for readability */
+#result_list tbody td {
+  color: #023e8a !important;
+  background-color: #ffffff !important;
+  font-weight: 500;
+}
+

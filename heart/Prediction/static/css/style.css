@@ -1,0 +1,496 @@
+/* === FUTURISTIC HEART PREDICTION THEME === */
+
+/* ====== GLOBAL PAGE STYLE ====== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #001f3f, #0077b6, #00b4d8, #90e0ef);
+  background-size: 400% 400%;
+  animation: bgShift 15s ease infinite;
+  margin: 0;
+  padding: 0;
+  color: #eaf6ff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ====== NAVBAR ====== */
+nav {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #00eaff;
+  transform: translateY(-2px);
+}
+
+button {
+  background: linear-gradient(135deg, #00b4d8, #48cae4);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00eaff, #0077b6);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+
+
+/* ====== CARD / CONTAINER ====== */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin: 80px auto;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== HEADINGS ====== */
+h1, h2, h3 {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* ====== RESULT TEXT ====== */
+.result-high {
+  color: #ff4d6d;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.result-low {
+  color: #00f5d4;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* ====== DASHBOARD TABLE ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: white;
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px;
+}
+
+tr:hover td {
+  background: rgba(0, 180, 216, 0.3);
+}
+
+/* ====== FOOTER ====== */
+footer {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 15px;
+  color: #bde0fe;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ====== ICON PULSE EFFECT ====== */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+}
+
+.heart-icon {
+  color: #ff4d6d;
+  animation: pulse 1.5s infinite;
+  font-size: 1.4em;
+}
+/* ====== HOLOGRAPHIC HEART ANIMATION ====== */
+.holographic-heart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at center, rgba(255, 75, 110, 0.4), transparent 70%);
+  filter: blur(30px);
+  transform: translate(-50%, -50%) rotate(0deg);
+  border-radius: 50% 50% 50% 50%;
+  animation: rotateHeart 12s linear infinite, glowPulse 3s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+@keyframes rotateHeart {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.05); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.2; filter: blur(20px); }
+  50% { opacity: 0.5; filter: blur(35px); }
+}
+.container {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15), 0 0 50px rgba(0, 180, 216, 0.1);
+}
+.container h2, .container p {
+  color: #f2faff;
+}
+/* ====== FLOATING PARTICLES ====== */
+@keyframes floatParticles {
+  from { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.particle {
+  position: fixed;
+  bottom: -10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: floatParticles linear infinite;
+  z-index: 0;
+}
+
+/* generate multiple */
+.particle:nth-child(1) { width: 6px; height: 6px; left: 10%; animation-duration: 12s; animation-delay: 0s; }
+.particle:nth-child(2) { width: 4px; height: 4px; left: 25%; animation-duration: 15s; animation-delay: 2s; }
+.particle:nth-child(3) { width: 8px; height: 8px; left: 40%; animation-duration: 18s; animation-delay: 4s; }
+.particle:nth-child(4) { width: 5px; height: 5px; left: 60%; animation-duration: 20s; animation-delay: 1s; }
+.particle:nth-child(5) { width: 7px; height: 7px; left: 80%; animation-duration: 16s; animation-delay: 3s; }
+
+/* ====== PREDICTION FORM STYLING ====== */
+.predict-form {
+  text-align: left;
+}
+
+.predict-form label {
+  display: block;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  color: #e0f7ff;
+}
+
+.predict-form input,
+.predict-form select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.predict-form input::placeholder {
+  color: #d0f1ff;
+  opacity: 0.7;
+}
+
+.predict-form input:focus,
+.predict-form select:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.predict-form button {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #00b4d8, #48cae4);
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.predict-form button:hover {
+  background: linear-gradient(135deg, #00eaff, #0077b6);
+  transform: scale(1.05);
+}
+/* ====== Fix for Invisible Dropdown Options ====== */
+.predict-form select {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #003554 !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 9999;
+  appearance: none; /* clean default arrow */
+  cursor: pointer;
+}
+
+/* Dropdown options styling */
+.predict-form select option {
+  background-color: #ffffff !important;
+  color: #023e8a !important;
+  font-weight: 500;
+}
+
+/* Fix hidden dropdown due to parent container */
+.container, .predict-form {
+  overflow: visible !important;
+  position: relative;
+}
+
+/* Custom dropdown arrow */
+.predict-form select {
+  background-image: linear-gradient(135deg, #00b4d8, #48cae4),
+                    url("data:image/svg+xml;utf8,<svg fill='%23ffffff' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 12px center, center;
+  background-size: 100%, 18px;
+  padding-right: 40px;
+}
+
+/* ====== FIX FORM FIELD ALIGNMENT (Equal Width for Inputs & Dropdowns) ====== */
+.predict-form input,
+.predict-form select {
+  width: 100%;
+  height: 48px; /* same height for all fields */
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none; /* removes browser-specific dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+}
+
+/* Add custom dropdown arrow */
+.predict-form select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='10'%20height='6'%20viewBox='0%200%2010%206'%3E%3Cpath%20fill='%23ffffff'%20d='M0%200l5%206%205-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+/* On focus / hover */
+.predict-form input:focus,
+.predict-form select:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  transform: scale(1.01);
+}
+
+/* Placeholder style */
+.predict-form input::placeholder {
+  color: #d0f1ff;
+  opacity: 0.8;
+}
+
+/* Optional: Add equal margin for perfect spacing */
+.predict-form label {
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+/* ====== RESULT PAGE STYLING ====== */
+.result-card {
+  max-width: 600px;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 35px 45px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  text-align: center;
+  color: #f2faff;
+  animation: fadeIn 1.2s ease;
+}
+
+.result-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.result-card hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 15px 0;
+}
+
+.risk-high {
+  color: #ff4d6d;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-shadow: 0 0 12px rgba(255, 77, 109, 0.5);
+}
+
+.risk-low {
+  color: #00f5d4;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-shadow: 0 0 12px rgba(0, 245, 212, 0.5);
+}
+
+.probability {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #cdefff;
+}
+
+.input-title {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #eaf6ff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-data {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+}
+
+.input-data li {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #d7f7ff;
+}
+
+/* Buttons */
+.result-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-glow, .btn-glow-secondary {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-glow {
+  background: linear-gradient(135deg, #00b4d8, #48cae4);
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.btn-glow:hover {
+  background: linear-gradient(135deg, #00eaff, #0077b6);
+  transform: scale(1.05);
+}
+
+.btn-glow-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #00eaff;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.btn-glow-secondary:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* ====== ABOUT BACKGROUND SECTION ====== */
+/* ====== ABOUT PAGE ====== */
+.about-section {
+  color: #eaf6ff;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.about-section h2, .about-section h3 {
+  text-align: center;
+  color: #00eaff;
+  text-shadow: 0 0 12px rgba(0,255,255,0.3);
+}
+
+.about-section ul.ml-steps {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.about-section ul.ml-steps li {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #d7f7ff;
+}
+
+.algo-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+}
+
+.final-line {
+  text-align: center;
+  margin-top: 25px;
+  font-style: italic;
+  color: #aeefff;
+}
+
